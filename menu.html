@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メニュー一覧 | 珈琲とお抹茶の喫茶店あんど</title>
+  <meta name="description" content="大阪府四條畷市にある「珈琲とお抹茶の喫茶店あんど」のメニュー一覧ページ。こだわりのあんどサンド、モーニングプレート、ドリンク、お抹茶や日替わりの気まぐれスイーツをご紹介。">
+  <meta name="keywords" content="メニュー,喫茶店,四條畷,あんど,あんどサンド,モーニング,抹茶,スイーツ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { opacity: 0; transition: opacity 0.5s ease; }
+    body.loaded { opacity: 1; }
+
+    /* Page-specific menu styles */
+    .menu-page-header {
+      padding: 140px 0 40px;
+      background: var(--cream);
+      text-align: left;
+      position: relative;
+    }
+    .menu-page-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--red-dark);
+      margin-bottom: 0.5rem;
+    }
+    .back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--red);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color var(--transition), transform var(--transition);
+      margin-bottom: 2rem;
+    }
+    .back-to-home:hover {
+      color: var(--red-light);
+      transform: translateX(-4px);
+    }
+    
+    /* Active Nav adjustment */
+    .nav-links a.menu-nav-active {
+      color: var(--gold-light) !important;
+    }
+    .nav-links a.menu-nav-active::after {
+      width: 100% !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== MOBILE NAV ===== -->
+<nav id="mobileNav" class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+  <button id="mobileNavClose" class="close-btn" aria-label="メニューを閉じる">✕</button>
+  <a href="index.html">トップ</a>
+  <a href="index.html#concept">お店について</a>
+  <a href="index.html#children">お子様連れ歓迎</a>
+  <a href="menu.html">メニュー</a>
+  <a href="index.html#gallery">ギャラリー</a>
+  <a href="index.html#info">基本情報</a>
+  <a href="index.html#access">アクセス</a>
+  <a href="index.html#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header id="header" class="scrolled"> <!-- Force header scrolled state on details page for visibility -->
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/ロゴ.png" alt="あんど" class="nav-logo-img">
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="メインナビゲーション">
+      <a href="index.html#concept">お店について</a>
+      <a href="index.html#children">お子様連れ歓迎</a>
+      <a href="menu.html" class="menu-nav-active">メニュー</a>
+      <a href="index.html#gallery">ギャラリー</a>
+      <a href="index.html#info">基本情報</a>
+      <a href="index.html#access">アクセス</a>
+      <a href="index.html#contact" class="nav-cta">ご予約・お問い合わせ</a>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== MENU PAGE HEADER ===== -->
+<div class="menu-page-header">
+  <div class="container">
+    <a href="index.html" class="back-to-home">
+      <span>← トップページへ戻る</span>
+    </a>
+    <h1 class="menu-page-title">お品書き</h1>
+    <p style="color: var(--text-mid); font-size: 0.9rem; letter-spacing: 0.1em;">あんどの全メニュー一覧</p>
+    <div class="accent-seigaiha" style="margin-top: 1.5rem;"></div>
+  </div>
+</div>
+
+<!-- ===== MENU ===== -->
+<section id="menu" style="padding-top: 20px;" aria-labelledby="menu-heading">
+  <div class="container">
+    <h2 id="menu-heading" class="section-title reveal" style="display:none;">メニュー</h2>
+
+    <!-- Tabs -->
+    <div class="menu-tabs reveal" role="tablist" aria-label="メニューカテゴリ">
+      <button class="menu-tab-btn active ripple-btn" data-tab="food" role="tab" aria-selected="true" aria-controls="panel-food" id="tab-food">
+        <span>フード</span>
+      </button>
+      <button class="menu-tab-btn ripple-btn" data-tab="drink" role="tab" aria-selected="false" aria-controls="panel-drink" id="tab-drink">
+        <span>ドリンク</span>
+      </button>
+      <button class="menu-tab-btn ripple-btn" data-tab="matcha" role="tab" aria-selected="false" aria-controls="panel-matcha" id="tab-matcha">
+        <span>お抹茶・スイーツ</span>
+      </button>
+    </div>
+
+    <!-- ====== FOOD PANEL ====== -->
+    <div id="panel-food" class="menu-panel active" role="tabpanel" aria-labelledby="tab-food">
+
+      <div class="menu-cards" style="margin-top:24px;">
+
+        <!-- モーニングプレート -->
+        <div class="menu-card" id="menu-morning">
+          <div class="menu-card-image" aria-label="モーニングプレートの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/モーニングプレート.jpg" alt="モーニングプレート">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">MORNING</span>
+            <h3 class="menu-card-title">モーニングプレート</h3>
+            <p class="menu-card-desc">
+              目玉焼き・ハム・ごはんなど、トッピングの変更が可能です。<br>
+              ドリンクとセットでお楽しみください。
+            </p>
+          </div>
+        </div>
+
+        <!-- あんどサンド -->
+        <div class="menu-card" id="menu-sand">
+          <div class="menu-card-image" aria-label="あんどサンドの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/あんどサンド.jpg" alt="あんどサンド">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SIGNATURE</span>
+            <h3 class="menu-card-title">あんどサンド</h3>
+            <p class="menu-card-desc">
+              日替わりで6種類ほどご用意しております。あなたのお気に入りを見つけてください。
+            </p>
+          </div>
+        </div>
+
+        <!-- 選べるトーストセット -->
+        <div class="menu-card" id="menu-toast">
+          <div class="menu-card-image" aria-label="選べるトーストセットの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/選べるトーストセット.jpg" alt="選べるトーストセット">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">TOAST SET</span>
+            <h3 class="menu-card-title">選べるトーストセット</h3>
+            <p class="menu-card-desc">
+              お好みのトーストにドリンクをセット。<br>
+              いちごジャム・マーマレード・ブルーベリージャム・はちみつなどからお好きな種類をお選びください。
+            </p>
+          </div>
+        </div>
+
+        <!-- 選べるプレート -->
+        <div class="menu-card" id="menu-plate">
+          <div class="menu-card-image" aria-label="選べるプレートの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/選べるプレート.jpg" alt="選べるプレート">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SELECT PLATE</span>
+            <h3 class="menu-card-title">選べるプレート</h3>
+            <p class="menu-card-desc">
+              フードが<strong>2つ選べます</strong>。<br>
+              組み合わせは<strong style="color:var(--red)">65通り以上！</strong><br>
+              自分だけのプレートをお楽しみください。
+            </p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:0.6rem;">
+              <span class="combo-badge">65通り以上の組み合わせ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram Note -->
+      <p class="menu-instagram-note" style="text-align: center; margin-top: 3rem; font-size: 0.9rem; color: var(--text-mid);">
+        ※フードメニューの詳細は <a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" style="color: var(--red); font-weight: 600; text-decoration: underline;">Instagram（@ando.0053）</a> をご確認ください。
+      </p>
+    </div>
+
+    <!-- ====== DRINK PANEL ====== -->
+    <div id="panel-drink" class="menu-panel" role="tabpanel" aria-labelledby="tab-drink">
+
+      <div class="menu-cards" style="margin-top:24px;">
+
+        <!-- コーヒー -->
+        <div class="menu-card" id="menu-coffee">
+          <div class="menu-card-image" aria-label="コーヒーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/コーヒー.jpg" alt="コーヒー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">COFFEE</span>
+            <h3 class="menu-card-title">コーヒー</h3>
+            <p class="menu-card-desc">
+              深みのある自慢のブレンド。こだわりの一杯をお楽しみください。
+            </p>
+          </div>
+        </div>
+
+        <!-- プレミアムアイスコーヒー -->
+        <div class="menu-card" id="menu-premium-ice">
+          <div class="menu-card-image" aria-label="プレミアムアイスコーヒーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/プレミアムアイスコーヒー.jpg" alt="プレミアムアイスコーヒー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ICE COFFEE</span>
+            <h3 class="menu-card-title">プレミアムアイスコーヒー</h3>
+            <p class="menu-card-desc">
+              淹れたてコーヒーと氷をお持ちします。
+            </p>
+          </div>
+        </div>
+
+        <!-- クリームソーダ -->
+        <div class="menu-card" id="menu-cream-soda">
+          <div class="menu-card-image" aria-label="クリームソーダの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/クリームソーダ.jpg" alt="クリームソーダ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SODA</span>
+            <h3 class="menu-card-title">クリームソーダ</h3>
+            <p class="menu-card-desc">
+              さわやかなソーダに、冷たいアイスクリームを載せた定番ドリンクです。
+            </p>
+          </div>
+        </div>
+
+        <!-- 生絞りレモンスカッシュ -->
+        <div class="menu-card" id="menu-lemon-squash">
+          <div class="menu-card-image" aria-label="生絞りレモンスカッシュの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/生絞りレモンスカッシュ.jpg" alt="生絞りレモンスカッシュ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">LEMON SQUASH</span>
+            <h3 class="menu-card-title">生絞りレモンスカッシュ</h3>
+            <p class="menu-card-desc">
+              フレッシュなレモンを贅沢に絞った、すっきり爽快なドリンク。
+            </p>
+          </div>
+        </div>
+
+        <!-- ソフトドリンク -->
+        <div class="menu-card" id="menu-soft-drink">
+          <div class="menu-card-image" aria-label="ソフトドリンクの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ソフトドリンク.jpg" alt="ソフトドリンク">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SOFT DRINK</span>
+            <h3 class="menu-card-title">ソフトドリンク</h3>
+            <p class="menu-card-desc">
+              紅茶やジュース、ミルクなど各種ソフトドリンクをご用意しております。
+            </p>
+          </div>
+        </div>
+
+        <!-- シェイク -->
+        <div class="menu-card" id="menu-shake">
+          <div class="menu-card-image" aria-label="シェイクの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/シェイク.jpg" alt="シェイク">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SHAKE</span>
+            <h3 class="menu-card-title">シェイク</h3>
+            <p class="menu-card-desc">
+              冷たくて甘い、あんど特製のひんやりシェイク。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram Note -->
+      <p class="menu-instagram-note" style="text-align: center; margin-top: 3rem; font-size: 0.9rem; color: var(--text-mid);">
+        ※ドリンクメニューの詳細は <a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" style="color: var(--red); font-weight: 600; text-decoration: underline;">Instagram（@ando.0053）</a> をご確認ください。
+      </p>
+    </div>
+
+    <!-- ====== MATCHA PANEL ====== -->
+    <div id="panel-matcha" class="menu-panel" role="tabpanel" aria-labelledby="tab-matcha">
+
+      <!-- Matcha hero -->
+      <div class="matcha-hero">
+        <div class="seigaiha-border-top" aria-hidden="true"></div>
+        <div class="seigaiha-bg" aria-hidden="true"></div>
+        <div class="matcha-hero-inner">
+          <div style="text-align: left; width: 100%;">
+            <h3 style="font-family: var(--font-serif); font-size: 2.2rem; letter-spacing: 0.15em; margin-bottom: 0.8rem; color: #fff;">抹茶スイーツと気まぐれスイーツ</h3>
+            <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.8; max-width: 600px; margin: 0 0; color: rgba(255,255,255,0.95);">
+              こだわりの抹茶スイーツから、日替わりの気まぐれスイーツまで。<br>
+              ほっと心が和む、贅沢な緑の味わいをお届けします。
+            </p>
+          </div>
+        </div>
+        <div class="seigaiha-border-bottom" aria-hidden="true"></div>
+      </div>
+
+      <div class="menu-cards" style="margin-top:24px;">
+
+        <!-- 抹茶氷(期間限定) -->
+        <div class="menu-card" id="menu-matcha-hyo">
+          <div class="menu-card-image" aria-label="抹茶氷(期間限定)の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶氷.jpg" alt="抹茶氷(期間限定)">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SEASONAL</span>
+            <h3 class="menu-card-title">抹茶氷(期間限定)</h3>
+            <p class="menu-card-desc">
+              ふわふわかき氷に抹茶シロップがたっぷり。夏の定番スイーツです。
+            </p>
+          </div>
+        </div>
+
+        <!-- 抹茶シフォン -->
+        <div class="menu-card" id="menu-matcha-chiffon">
+          <div class="menu-card-image" aria-label="抹茶シフォンの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶シフォン.jpg" alt="抹茶シフォン">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">CHIFFON</span>
+            <h3 class="menu-card-title">抹茶シフォン</h3>
+            <p class="menu-card-desc">
+              ふわふわ軽い食感の抹茶シフォン。ほっとする甘さです。
+            </p>
+          </div>
+        </div>
+
+        <!-- 抹茶パフェ -->
+        <div class="menu-card" id="menu-matcha-parfait">
+          <div class="menu-card-image" aria-label="抹茶パフェの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶パフェ.png" alt="抹茶パフェ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">PARFAIT</span>
+            <h3 class="menu-card-title">抹茶パフェ</h3>
+            <p class="menu-card-desc">
+              お抹茶のアイスやゼリーを贅沢に詰め込んだ、見た目も華やかなパフェ。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 気まぐれスイーツの案内 -->
+      <div class="sweets-note" style="margin-top:2.5rem; border-color:var(--brown); background:linear-gradient(135deg,#f5e8d0,#efe0c0);">
+        <div class="sweets-note-text">
+          <h4 style="color:var(--brown);">気まぐれスイーツについて</h4>
+          <p>スイーツのメニューはその日によって変動します。当日のラインナップはお電話またはInstagramのストーリーズでご確認ください。</p>
+        </div>
+      </div>
+
+      <!-- 気まぐれスイーツの見出し -->
+      <div style="margin-top: 4rem; display:flex; align-items:center; gap:12px; margin-bottom:1.2rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--green); font-weight:600;">気まぐれスイーツ</h3>
+        <span class="seasonal-note">日替わりメニュー</span>
+      </div>
+
+      <div class="menu-cards">
+
+        <!-- チョコアイス -->
+        <div class="menu-card" id="menu-choco-ice">
+          <div class="menu-card-image" aria-label="チョコアイスの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/チョコアイス.png" alt="チョコアイス">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ICE CREAM</span>
+            <h3 class="menu-card-title">チョコアイス</h3>
+            <p class="menu-card-desc">
+              濃厚なチョコレートの甘さとコクが楽しめる、定番のアイスクリーム。
+            </p>
+          </div>
+        </div>
+
+        <!-- バニラアイス -->
+        <div class="menu-card" id="menu-vanilla-ice">
+          <div class="menu-card-image" aria-label="バニラアイスの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/バニラアイス.png" alt="バニラアイス">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ICE CREAM</span>
+            <h3 class="menu-card-title">バニラアイス</h3>
+            <p class="menu-card-desc">
+              香り豊かなバニラの風味が口いっぱいに広がる、シンプルで上品なアイスクリーム。
+            </p>
+          </div>
+        </div>
+
+        <!-- マロンパフェ(期間限定) -->
+        <div class="menu-card" id="menu-marron-parfait">
+          <div class="menu-card-image" aria-label="マロンパフェ(期間限定)の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/マロンパフェ.png" alt="マロンパフェ(期間限定)">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SEASONAL</span>
+            <h3 class="menu-card-title">マロンパフェ(期間限定)</h3>
+            <p class="menu-card-desc">
+              栗の美味しさをぎゅっと詰め込んだ、秋を感じる贅沢な期間限定パフェです。
+            </p>
+          </div>
+        </div>
+
+        <!-- いちごパフェ(期間限定) -->
+        <div class="menu-card" id="menu-strawberry-parfait">
+          <div class="menu-card-image" aria-label="いちごパフェ(期間限定)の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/いちごパフェ.png" alt="いちごパフェ(期間限定)">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">SEASONAL</span>
+            <h3 class="menu-card-title">いちごパフェ(期間限定)</h3>
+            <p class="menu-card-desc">
+              フレッシュないちごを贅沢に使用した、見た目も華やかな期間限定パフェ。
+            </p>
+          </div>
+        </div>
+
+        <!-- レモンパウンドケーキ -->
+        <div class="menu-card" id="menu-lemon-cake">
+          <div class="menu-card-image" aria-label="レモンパウンドケーキの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/レモンパウンドケーキ.png" alt="レモンパウンドケーキ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">CAKE</span>
+            <h3 class="menu-card-title">レモンパウンドケーキ</h3>
+            <p class="menu-card-desc">
+              さっぱりとしたレモンの酸味と、しっとりとした生地が絶妙なパウンドケーキ。
+            </p>
+          </div>
+        </div>
+
+        <!-- コーヒーゼリー -->
+        <div class="menu-card" id="menu-coffee-jelly">
+          <div class="menu-card-image" aria-label="コーヒーゼリーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/コーヒーゼリー.png" alt="コーヒーゼリー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">JELLY</span>
+            <h3 class="menu-card-title">コーヒーゼリー</h3>
+            <p class="menu-card-desc">
+              ほろ苦いコーヒーゼリーに、甘いクリームやアイスを合わせたひんやりスイーツ。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 気まぐれスイーツの案内 -->
+      <div class="sweets-note" style="margin-top:2.5rem; border-color:var(--brown); background:linear-gradient(135deg,#f5e8d0,#efe0c0);">
+        <div class="sweets-note-text">
+          <h4 style="color:var(--brown);">気まぐれスイーツについて</h4>
+          <p>スイーツのメニューはその日によって変動します。当日のラインナップはお電話またはInstagramのストーリーズでご確認ください。</p>
+        </div>
+      </div>
+
+      <!-- Instagram Note -->
+      <p class="menu-instagram-note" style="text-align: center; margin-top: 3rem; font-size: 0.9rem; color: var(--text-mid);">
+        ※スイーツメニューの詳細は <a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" style="color: var(--red); font-weight: 600; text-decoration: underline;">Instagram（@ando.0053）</a> をご確認ください。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" aria-label="フッター">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="img/ロゴ.png" alt="あんど" class="footer-logo-img">
+        <div class="footer-name">珈琲とお抹茶の喫茶店</div>
+      </div>
+      <nav class="footer-links" aria-label="フッターナビゲーション">
+        <a href="index.html#concept">お店について</a>
+        <a href="index.html#children">お子様連れ歓迎</a>
+        <a href="menu.html">メニュー</a>
+        <a href="index.html#gallery">ギャラリー</a>
+        <a href="index.html#info">基本情報</a>
+        <a href="index.html#access">アクセス</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-copy">
+      <p class="footer-info-text">
+        <span>〒575-0051 大阪府四條畷市中野本町４−２４</span>
+        <span class="footer-tel-separator">　</span>
+        <span class="footer-tel-wrap">TEL: <a href="tel:07053420053" style="color:rgba(255,255,255,0.5);">070-5342-0053</a></span>
+      </p>
+      <p style="margin-top:6px;">&copy; 2026 珈琲とお抹茶の喫茶店あんど. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- 画面右下固定のInstagramボタン -->
+<a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" class="fixed-instagram-btn" aria-label="Instagramを開く">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="instagram-icon">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+</a>
+
+</body>
+</html>
+

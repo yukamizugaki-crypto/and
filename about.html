@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お店について | 珈琲とお抹茶の喫茶店あんど</title>
+  <meta name="description" content="四條畷生まれの幼なじみ2人が営む「珈琲とお抹茶の喫茶店あんど」のお店について。お抹茶を気軽に、地域に根ざした憩いの場として皆さまをお待ちしております。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { opacity: 0; transition: opacity 0.5s ease; }
+    body.loaded { opacity: 1; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: var(--red-dark);
+      padding: 140px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Cpath d='M0 30 Q15 0 30 30 Q45 0 60 30' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 60px 30px;
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .page-breadcrumb {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+    .page-breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      transition: color 0.3s;
+    }
+    .page-breadcrumb a:hover { color: var(--gold-light); }
+    .page-breadcrumb span { margin: 0 8px; }
+    .page-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      letter-spacing: 0.15em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+    .page-hero-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== CONCEPT FEATURES ===== */
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 3rem 0;
+      border: 1px solid var(--border-color);
+    }
+    .about-feature {
+      padding: 2.5rem 2rem;
+      background: #fff;
+      border-right: 1px solid var(--border-color);
+    }
+    .about-feature:last-child { border-right: none; }
+    .about-feature-num {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--red);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .about-feature h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--red-dark);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+    .about-feature p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ===== STORY SECTION ===== */
+    .about-story {
+      background: var(--cream-dark);
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+    .story-grid {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .story-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      border: 1px solid var(--red);
+      padding: 4px 10px;
+      margin-bottom: 1.5rem;
+    }
+    .story-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--red-dark);
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    .story-body p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+    .story-date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-dark);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 6px 16px;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+
+    /* ===== COMMITMENT ===== */
+    .about-commitment {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+    .commitment-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .commitment-gallery-side {
+      max-width: 480px;
+      width: 100%;
+      margin-left: auto;
+    }
+    .commitment-text-side {
+      text-align: left;
+    }
+    .commitment-item-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    .commitment-text-side h3 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--red-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .commitment-text-side p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+    .commitment-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .commitment-photo {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      padding: 6px;
+      background: #fff;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .commitment-photo::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 1px solid rgba(211, 197, 181, 0.4);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .commitment-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .commitment-photo:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+    .commitment-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== BACK LINK ===== */
+    .back-link-wrap {
+      text-align: left;
+      padding: 50px 0 60px;
+      border-top: 1px solid var(--border-color);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      letter-spacing: 0.08em;
+      transition: color 0.3s, gap 0.3s;
+    }
+    .back-link::before {
+      content: '←';
+      font-size: 1rem;
+      transition: transform 0.3s;
+    }
+    .back-link:hover { color: var(--red); }
+    .back-link:hover::before { transform: translateX(-4px); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+      .about-feature {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .about-feature:last-child { border-bottom: none; }
+      .commitment-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .commitment-gallery-side {
+        margin: 0 auto;
+      }
+      .commitment-photo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+    }
+    @media (max-width: 480px) {
+      .commitment-photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== MOBILE NAV ===== -->
+<nav id="mobileNav" class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+  <button id="mobileNavClose" class="close-btn" aria-label="メニューを閉じる">✕</button>
+  <a href="index.html">トップ</a>
+  <a href="index.html#concept">お店について</a>
+  <a href="index.html#children">お子様連れ歓迎</a>
+  <a href="index.html#menu">メニュー</a>
+  <a href="index.html#gallery">ギャラリー</a>
+  <a href="index.html#info">基本情報</a>
+  <a href="index.html#access">アクセス</a>
+  <a href="index.html#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/ロゴ.png" alt="あんど" class="nav-logo-img">
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="メインナビゲーション">
+      <a href="index.html#concept">お店について</a>
+      <a href="index.html#children">お子様連れ歓迎</a>
+      <a href="index.html#menu">メニュー</a>
+      <a href="index.html#gallery">ギャラリー</a>
+      <a href="index.html#info">基本情報</a>
+      <a href="index.html#access">アクセス</a>
+      <a href="index.html#contact" class="nav-cta">ご予約・お問い合わせ</a>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-breadcrumb">
+      <a href="index.html">トップ</a><span>／</span>お店について
+    </div>
+    <h1 class="page-hero-title">お店について</h1>
+    <p class="page-hero-sub">珈琲とお抹茶の喫茶店あんど</p>
+  </div>
+</div>
+
+<!-- ===== CONCEPT INTRO ===== -->
+<section id="about-intro">
+  <div class="container">
+    <h2 class="section-title reveal">あんどのこと</h2>
+    <p class="section-sub reveal delay-1">気軽においしいひとときを、四條畷から。</p>
+
+    <div class="about-features">
+      <div class="about-feature reveal delay-1">
+        <div class="about-feature-num">01</div>
+        <h3>お抹茶を気軽に</h3>
+        <p>本格的なお抹茶を、肩肘張らずに気軽に楽しんでいただけます。抹茶スイーツも充実しており、日常のひとときに日本の伝統の味を。</p>
+      </div>
+      <div class="about-feature reveal delay-2">
+        <div class="about-feature-num">02</div>
+        <h3>地域に根ざした憩いの場</h3>
+        <p>四條畷で生まれ育った幼なじみ２人が営む、地元に寄り添ったアットホームなお店。四條畷の皆さまに愛されるお店を目指しています。</p>
+      </div>
+      <div class="about-feature reveal delay-3">
+        <div class="about-feature-num">03</div>
+        <h3>年齢問わずウェルカム</h3>
+        <p>お子様から年配の方まで。おもちゃも完備でお子様連れのご家族も安心してどうぞ。2階のお座敷でゆったりとお過ごしいただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<div class="about-story">
+  <div class="container">
+    <div class="story-grid reveal">
+      <span class="story-label">STORY</span>
+      <h2 class="story-heading">お店の成り立ち</h2>
+      <div class="story-body">
+        <p>
+          四條畷市で生まれ育った幼なじみ2人でオープンしました。<br>
+          「地元のみなさんに愛されるお店を作りたい」という夢を胸に、<br>
+          ママ友2人で力を合わせてこの喫茶店を立ち上げました。
+        </p>
+        <p>
+          季節によって自家栽培・無農薬の野菜や果物も取り入れ、<br>
+          安心・安全で心が和む一杯・一皿を大切にしています。
+        </p>
+        <p>
+          お子様連れでも気兼ねなくお越しいただけるよう、<br>
+          おもちゃや2階のお座敷など、ゆったりと過ごしていただける<br>
+          空間づくりにもこだわっています。
+        </p>
+        <span class="story-date-badge">2026年04月25日 グランドオープン</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COMMITMENT ===== -->
+<div class="about-commitment">
+  <div class="container">
+    <h2 class="section-title reveal">あんどのこだわり</h2>
+    <p class="section-sub reveal delay-1">地元・四條畷への想いを大切に</p>
+
+    <div class="commitment-content reveal delay-2">
+      <div class="commitment-text-side">
+        <div class="commitment-item-label">NATURAL</div>
+        <h3>自家栽培・無農薬</h3>
+        <p>
+          季節によって自家栽培・無農薬の野菜や果物を取り入れ、<br>
+          安心・安全な食材でお客様をおもてなしします。
+        </p>
+      </div>
+      <div class="commitment-gallery-side">
+        <div class="commitment-photo-grid">
+          <div class="commitment-photo">
+            <img src="img/無農薬1.jpg" alt="自家栽培・無農薬 1">
+          </div>
+          <div class="commitment-photo">
+            <img src="img/無農薬2.jpg" alt="自家栽培・無農薬 2">
+          </div>
+          <div class="commitment-photo">
+            <img src="img/無農薬3.jpg" alt="自家栽培・無農薬 3">
+          </div>
+          <div class="commitment-photo">
+            <img src="img/無農薬4.jpg" alt="自家栽培・無農薬 4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BACK LINK ===== -->
+<div class="container back-link-wrap">
+  <a href="index.html" class="back-link" id="back-to-top">トップページに戻る</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" aria-label="フッター">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="img/ロゴ.png" alt="あんど" class="footer-logo-img">
+        <div class="footer-name">珈琲とお抹茶の喫茶店</div>
+      </div>
+      <nav class="footer-links" aria-label="フッターナビゲーション">
+        <a href="index.html#concept">お店について</a>
+        <a href="index.html#children">お子様連れ歓迎</a>
+        <a href="index.html#menu">メニュー</a>
+        <a href="index.html#gallery">ギャラリー</a>
+        <a href="index.html#info">基本情報</a>
+        <a href="index.html#access">アクセス</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-copy">
+      <p class="footer-info-text">
+        <span>〒575-0051 大阪府四條畷市中野本町４−２４</span>
+        <span class="footer-tel-separator">　</span>
+        <span class="footer-tel-wrap">TEL: <a href="tel:07053420053" style="color:rgba(255,255,255,0.5);">070-5342-0053</a></span>
+      </p>
+      <p style="margin-top:6px;">&copy; 2026 珈琲とお抹茶の喫茶店あんど. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fade in on load
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+
+  // Scroll header
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    });
+    mobileNavClose.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+<!-- 画面右下固定のInstagramボタン -->
+<a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" class="fixed-instagram-btn" aria-label="Instagramを開く">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="instagram-icon">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+</a>
+
+</body>
+</html>
+
