@@ -200,6 +200,12 @@ window.addEventListener('DOMContentLoaded', () => {
   initMenuSlider('food-slider');
   initMenuSlider('drink-slider');
   initMenuSlider('sweets-slider');
+  initMenuSlider('chiffon-slider');
+  initMenuSlider('classic-slider');
+  initMenuSlider('farm-slider');
+  initMenuSlider('shop-slider');
+  initMenuSlider('concept-mobile-slider');
+  initMenuSlider('concept-image-slider');
 });
 
 
