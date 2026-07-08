@@ -1322,10 +1322,27 @@ section {
 .matcha-hero-inner {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
   align-items: center;
-  justify-content: center;
   width: 100%;
+}
+
+.matcha-hero-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matcha-hero-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: block;
 }
 
 .matcha-items {
@@ -1971,6 +1988,11 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+#menu-matcha-hyo .menu-card-image-inner img,
+#menu-matcha-parfait .menu-card-image-inner img {
+  object-position: top;
 }
 
 /* ===== DRINK DETAIL IMAGE STYLE (SHOW ALL) ===== */

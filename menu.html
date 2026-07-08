@@ -57,7 +57,7 @@
 <nav id="mobileNav" class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
   <button id="mobileNavClose" class="close-btn" aria-label="メニューを閉じる">✕</button>
   <a href="index.html">トップ</a>
-  <a href="about.html">あんどのこと</a>
+  <a href="about.html">お店について</a>
   <a href="index.html#children">お子様連れ歓迎</a>
   <a href="menu.html">メニュー</a>
   <a href="gallery.html">ギャラリー</a>
@@ -93,8 +93,8 @@
     <a href="index.html" class="back-to-home">
       <span>← トップページへ戻る</span>
     </a>
-    <h1 class="menu-page-title">お品書き</h1>
-    <p style="color: var(--green); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em; margin-top: 0.5rem;">テイクアウト承ります。</p>
+    <h1 class="menu-page-title">メニュー</h1>
+    <p style="color: var(--green); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em; margin-top: 0.5rem;">テイクアウト承ります</p>
     <div class="accent-seigaiha" style="margin-top: 1.5rem;"></div>
   </div>
 </div>
@@ -129,7 +129,35 @@
     <!-- ====== FOOD PANEL ====== -->
     <div id="panel-food" class="menu-panel" role="tabpanel" aria-labelledby="tab-food">
 
+      <p style="text-align: center; margin: 1.5rem auto 0; font-size: 0.95rem; color: var(--text-dark); font-weight: 500;">
+        テイクアウト、イートインどちらも可
+      </p>
+
       <div class="menu-cards" style="margin-top:24px;">
+
+        <!-- あんどサンド -->
+        <div class="menu-card" id="menu-sand">
+          <div class="menu-card-image" aria-label="あんどサンドの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/あんどサンド.jpg" alt="あんどサンド">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">あんどサンド</span>
+            <p class="menu-card-desc">
+              野菜をたっぷり使ったボリュームサンド種類はこれからも増えていきます<br>
+              あなたのお気に入りを見つけてください
+            </p>
+            <div style="margin-top: 10px; border-top: 1px dashed var(--border-color); padding-top: 8px;">
+              <p class="menu-card-desc" style="font-size: 0.85rem; line-height: 1.5; margin: 0 0 6px;">
+                <a href="#" onclick="document.getElementById('tab-sand').click(); document.getElementById('tab-sand').scrollIntoView({ behavior: 'smooth', block: 'center' }); return false;" style="color: var(--red); font-weight: 600; text-decoration: underline;">→ 詳しくはこちら</a>
+              </p>
+              <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-dark); line-height: 1.5; margin: 0;">
+                本日のあんどサンドは<a href="https://www.instagram.com/ando.0053/" target="_blank" rel="noopener noreferrer" style="color: var(--red); text-decoration: underline; font-weight: 600;">Instagram</a>のストーリーをご確認ください
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- モーニングプレート -->
         <div class="menu-card" id="menu-morning">
@@ -173,7 +201,9 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">選べるプレート</span>
             <p class="menu-card-desc">
-              フードが<strong>2つ選べます</strong>。<br>
+              サラダ・スープ・ドリンク付<br>
+              フードが2つ選べます。<br>
+              組み合わせは<strong class="text-red">65通り以上！</strong><br>
               自分だけのプレートをお楽しみください。
             </p>
           </div>
@@ -181,6 +211,11 @@
 
         <!-- お子様ランチ -->
         <div class="menu-card" id="menu-kids-lunch">
+          <div class="menu-card-image" aria-label="お子様ランチの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/お子様ランチ.jpg" alt="お子様ランチ">
+            </div>
+          </div>
           <div class="menu-card-body">
             <span class="menu-card-tag green">お子様ランチ</span>
             <p class="menu-card-desc">
@@ -714,6 +749,22 @@
           </div>
         </div>
 
+        <!-- 生絞りレモンスカッシュ -->
+        <div class="menu-card" id="menu-lemon-squash">
+          <div class="menu-card-image" aria-label="生絞りレモンスカッシュの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/生絞りレモンスカッシュ.jpg" alt="生絞りレモンスカッシュ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">生絞りレモンスカッシュ</span>
+            <p class="menu-card-desc">
+              フレッシュなレモンを贅沢に絞った、すっきり爽快なドリンク。<br>
+              季節によって自家栽培/無農薬レモン使用
+            </p>
+          </div>
+        </div>
+
         <!-- クリームソーダ -->
         <div class="menu-card" id="menu-cream-soda">
           <div class="menu-card-image" aria-label="クリームソーダの写真">
@@ -725,21 +776,6 @@
             <span class="menu-card-tag">クリームソーダ</span>
             <p class="menu-card-desc">
               さわやかなソーダに、冷たいアイスクリームを載せた定番ドリンクです。
-            </p>
-          </div>
-        </div>
-
-        <!-- 生絞りレモンスカッシュ -->
-        <div class="menu-card" id="menu-lemon-squash">
-          <div class="menu-card-image" aria-label="生絞りレモンスカッシュの写真">
-            <div class="menu-card-image-inner">
-              <img src="img/生絞りレモンスカッシュ.jpg" alt="生絞りレモンスカッシュ">
-            </div>
-          </div>
-          <div class="menu-card-body">
-            <span class="menu-card-tag">生絞りレモンスカッシュ</span>
-            <p class="menu-card-desc">
-              フレッシュなレモンを贅沢に絞った、すっきり爽快なドリンク。
             </p>
           </div>
         </div>
@@ -798,6 +834,9 @@
               <span style="font-size: 0.85rem; opacity: 0.85; display: inline-block; margin-top: 0.5rem;">※常時ご用意しているわけではないため、事前にお問い合わせいただけますと幸いです。</span>
             </p>
           </div>
+          <div class="matcha-hero-image-wrap">
+            <img src="img/HERO2.jpg" alt="お抹茶" class="matcha-hero-image">
+          </div>
         </div>
         <div class="seigaiha-border-bottom" aria-hidden="true"></div>
       </div>
@@ -808,7 +847,7 @@
         <div class="menu-card" id="menu-matcha-hyo">
           <div class="menu-card-image" aria-label="抹茶氷(期間限定)の写真">
             <div class="menu-card-image-inner">
-              <img src="img/抹茶氷.jpg" alt="抹茶氷(期間限定)">
+              <img src="img/抹茶氷.png" alt="抹茶氷(期間限定)">
             </div>
           </div>
           <div class="menu-card-body">
@@ -845,6 +884,36 @@
             <span class="menu-card-tag">抹茶パフェ</span>
             <p class="menu-card-desc">
               お抹茶のアイスやゼリーを贅沢に詰め込んだ、見た目も華やかなパフェ。
+            </p>
+          </div>
+        </div>
+
+        <!-- 抹茶ゼリー -->
+        <div class="menu-card" id="menu-matcha-jelly">
+          <div class="menu-card-image" aria-label="抹茶ゼリーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶ゼリー.jpg" alt="抹茶ゼリー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">抹茶ゼリー</span>
+            <p class="menu-card-desc">
+              つるんと喉越しの良い、濃厚な抹茶の旨みが広がる自家製ゼリーです。
+            </p>
+          </div>
+        </div>
+
+        <!-- 抹茶バスクチーズケーキ -->
+        <div class="menu-card" id="menu-matcha-basque-cheese">
+          <div class="menu-card-image" aria-label="抹茶バスクチーズケーキの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶バスクチーズケーキ.jpg" alt="抹茶バスクチーズケーキ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">抹茶バスクチーズケーキ</span>
+            <p class="menu-card-desc">
+              宇治抹茶を贅沢に練り込み、高温で香ばしく焼き上げた濃厚なバスクチーズケーキです。
             </p>
           </div>
         </div>
@@ -982,7 +1051,7 @@
         <div class="menu-card" id="menu-coffee-jelly">
           <div class="menu-card-image" aria-label="コーヒーゼリーの写真">
             <div class="menu-card-image-inner">
-              <img src="img/コーヒーゼリー.png" alt="コーヒーゼリー">
+              <img src="img/コーヒーゼリー.jpg" alt="コーヒーゼリー">
             </div>
           </div>
           <div class="menu-card-body">
@@ -1019,6 +1088,24 @@
             <span class="menu-card-tag">バニラアイス</span>
             <p class="menu-card-desc">
               香り豊かなバニラの風味が口いっぱいに広がる、シンプルで上品なアイスクリーム。
+            </p>
+          </div>
+        </div>
+
+        <!-- マフィン各種 -->
+        <div class="menu-card" id="menu-muffin-variety">
+          <div class="menu-card-image" aria-label="マフィン各種の写真">
+            <div class="menu-card-image-inner">
+              <div class="slider-container" id="muffin-slider">
+                <img src="img/マフィン各種1.jpg" alt="マフィン各種1" class="slide active">
+                <img src="img/マフィン各種2.jpg" alt="マフィン各種2" class="slide">
+              </div>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">マフィン各種</span>
+            <p class="menu-card-desc">
+              日替わりでご用意する手作りマフィン。様々なフレーバーをお楽しみいただけます。
             </p>
           </div>
         </div>

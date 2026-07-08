@@ -206,6 +206,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initMenuSlider('shop-slider');
   initMenuSlider('concept-mobile-slider');
   initMenuSlider('concept-image-slider');
+  initMenuSlider('muffin-slider');
 });
 
 
