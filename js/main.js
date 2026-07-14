@@ -192,7 +192,7 @@ function initMenuSlider(sliderId) {
     slides[currentIdx].classList.remove('active');
     currentIdx = (currentIdx + 1) % slides.length;
     slides[currentIdx].classList.add('active');
-  }, 5000);
+  }, 2000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -201,12 +201,12 @@ window.addEventListener('DOMContentLoaded', () => {
   initMenuSlider('drink-slider');
   initMenuSlider('sweets-slider');
   initMenuSlider('chiffon-slider');
-  initMenuSlider('classic-slider');
   initMenuSlider('farm-slider');
   initMenuSlider('shop-slider');
   initMenuSlider('concept-mobile-slider');
   initMenuSlider('concept-image-slider');
   initMenuSlider('muffin-slider');
+  initMenuSlider('kids-lunch-slider');
 });
 
 

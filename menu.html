@@ -60,7 +60,6 @@
   <a href="about.html">お店について</a>
   <a href="index.html#children">お子様連れ歓迎</a>
   <a href="menu.html">メニュー</a>
-  <a href="gallery.html">ギャラリー</a>
   <a href="index.html#info">基本情報</a>
   <a href="index.html#access">アクセス</a>
   <a href="index.html#contact">お問い合わせ</a>
@@ -70,13 +69,12 @@
 <header id="header" class="scrolled"> <!-- Force header scrolled state on details page for visibility -->
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="img/ロゴ.png" alt="あんど" class="nav-logo-img">
+      <img src="img/ロゴ2.png" alt="あんど" class="nav-logo-img">
     </a>
     <nav class="nav-links" role="navigation" aria-label="メインナビゲーション">
       <a href="about.html">あんどのこと</a>
       <a href="index.html#children">お子様連れ歓迎</a>
       <a href="menu.html" class="menu-nav-active">メニュー</a>
-      <a href="gallery.html">ギャラリー</a>
       <a href="index.html#info">基本情報</a>
       <a href="index.html#access">アクセス</a>
       <a href="index.html#contact" class="nav-cta">ご予約・お問い合わせ</a>
@@ -129,10 +127,6 @@
     <!-- ====== FOOD PANEL ====== -->
     <div id="panel-food" class="menu-panel" role="tabpanel" aria-labelledby="tab-food">
 
-      <p style="text-align: center; margin: 1.5rem auto 0; font-size: 0.95rem; color: var(--text-dark); font-weight: 500;">
-        テイクアウト、イートインどちらも可
-      </p>
-
       <div class="menu-cards" style="margin-top:24px;">
 
         <!-- あんどサンド -->
@@ -145,8 +139,9 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">あんどサンド</span>
             <p class="menu-card-desc">
-              野菜をたっぷり使ったボリュームサンド種類はこれからも増えていきます<br>
-              あなたのお気に入りを見つけてください
+              野菜をたっぷり使ったボリュームサンド<br>
+              あなたのお気に入りを見つけてください<br>
+              テイクアウト、イートインどちらも可
             </p>
             <div style="margin-top: 10px; border-top: 1px dashed var(--border-color); padding-top: 8px;">
               <p class="menu-card-desc" style="font-size: 0.85rem; line-height: 1.5; margin: 0 0 6px;">
@@ -213,23 +208,27 @@
         <div class="menu-card" id="menu-kids-lunch">
           <div class="menu-card-image" aria-label="お子様ランチの写真">
             <div class="menu-card-image-inner">
-              <img src="img/お子様ランチ.jpg" alt="お子様ランチ">
+              <div class="slider-container" id="kids-lunch-slider">
+                <img src="img/お子様ランチ.jpg" alt="お子様ランチ 1" class="slide active">
+                <img src="img/お子様ランチ2.png" alt="お子様ランチ 2" class="slide">
+              </div>
             </div>
           </div>
           <div class="menu-card-body">
             <span class="menu-card-tag green">お子様ランチ</span>
             <p class="menu-card-desc">
-              お子様向けのかわいいお食事プレートをご用意しております。ジュースやおもちゃ付きの、お子様が大好きなメニューの盛り合わせです。
+              お子様向けのかわいいお食事プレートをご用意しております。ジュース付きで、お子様が大好きなメニューの盛り合わせです。
             </p>
           </div>
         </div>
 
         <!-- お弁当 -->
         <div class="menu-card" id="menu-bento">
-          <div class="menu-card-image" aria-label="お弁当の写真">
+          <div class="menu-card-image" aria-label="お弁当の写真" style="position: relative;">
             <div class="menu-card-image-inner">
               <img src="img/お弁当.png" alt="お弁当">
             </div>
+            <span class="image-note" style="position: absolute; right: 8px; bottom: 8px; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 2px; font-weight: 500; pointer-events: none; letter-spacing: 0.05em;">※写真は一例です</span>
           </div>
           <div class="menu-card-body">
             <span class="menu-card-tag">お弁当</span>
@@ -239,24 +238,189 @@
           </div>
         </div>
 
-        <!-- 定番メニュー -->
-        <div class="menu-card" id="menu-classic-list">
-          <div class="menu-card-image" aria-label="定番メニューの写真">
+        <!-- ミックスサンド -->
+        <div class="menu-card" id="menu-mix-sand">
+          <div class="menu-card-image" aria-label="ミックスサンドの写真">
             <div class="menu-card-image-inner">
-              <div class="slider-container" id="classic-slider">
-                <img src="img/gallery1.jpg" alt="定番メニュー 1" class="slide active">
-                <img src="img/gallery2.jpg" alt="定番メニュー 2" class="slide">
-                <img src="img/gallery5.jpg" alt="定番メニュー 3" class="slide">
-                <img src="img/gallery6.jpg" alt="定番メニュー 4" class="slide">
-                <img src="img/gallery9.jpg" alt="定番メニュー 5" class="slide">
-              </div>
+              <img src="img/ミックスサンド.jpg" alt="ミックスサンド">
             </div>
           </div>
           <div class="menu-card-body">
-            <span class="menu-card-tag">定番メニュー</span>
-            <p class="menu-card-desc">
-              皆さまに愛される喫茶あんどの定番お食事メニューです。
-            </p>
+            <span class="menu-card-tag">ミックスサンド</span>
+          </div>
+        </div>
+
+        <!-- トーストサンド(ベーコン) -->
+        <div class="menu-card" id="menu-toast-sand-bac">
+          <div class="menu-card-image" aria-label="トーストサンド(ベーコン)の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/トーストサンド(ベーコン).jpg" alt="トーストサンド(ベーコン)">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">トーストサンド(ベーコン)</span>
+          </div>
+        </div>
+
+        <!-- ホットケーキ -->
+        <div class="menu-card" id="menu-pancake">
+          <div class="menu-card-image" aria-label="ホットケーキの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ホットケーキ.jpg" alt="ホットケーキ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ホットケーキ</span>
+          </div>
+        </div>
+
+        <!-- ピザトースト -->
+        <div class="menu-card" id="menu-pizza-toast">
+          <div class="menu-card-image" aria-label="ピザトーストの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ピザトースト.jpg" alt="ピザトースト">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ピザトースト</span>
+          </div>
+        </div>
+
+        <!-- あんバタートースト -->
+        <div class="menu-card" id="menu-anbutter-toast">
+          <div class="menu-card-image" aria-label="あんバタートーストの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/あんバタートースト.jpg" alt="あんバタートースト">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">あんバタートースト</span>
+          </div>
+        </div>
+
+        <!-- ホットドック -->
+        <div class="menu-card" id="menu-hotdog">
+          <div class="menu-card-image" aria-label="ホットドックの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ホットドック.jpg" alt="ホットドック">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ホットドック</span>
+          </div>
+        </div>
+
+        <!-- エッグドッグ -->
+        <div class="menu-card" id="menu-eggdog">
+          <div class="menu-card-image" aria-label="エッグドッグの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/エッグドッグ.jpg" alt="エッグドッグ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">エッグドッグ</span>
+          </div>
+        </div>
+
+        <!-- スイーツドッグ -->
+        <div class="menu-card" id="menu-sweetsdog">
+          <div class="menu-card-image" aria-label="スイーツドッグの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/スイーツドッグ.jpg" alt="スイーツドッグ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">スイーツドッグ</span>
+          </div>
+        </div>
+
+        <!-- ハーブチキンサラダプレート -->
+        <div class="menu-card" id="menu-herbchicken-salad">
+          <div class="menu-card-image" aria-label="ハーブチキンサラダプレートの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ハーブチキンサラダプレート.png" alt="ハーブチキンサラダプレート">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ハーブチキンサラダプレート</span>
+          </div>
+        </div>
+
+        <!-- カレー（ミニサラダ付きます） -->
+        <div class="menu-card" id="menu-curry">
+          <div class="menu-card-image" aria-label="カレーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/カレー.jpg" alt="カレー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">カレー</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
+          </div>
+        </div>
+
+        <!-- 焼きカレー（ミニサラダ付きます） -->
+        <div class="menu-card" id="menu-baked-curry">
+          <div class="menu-card-image" aria-label="焼きカレーの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/焼きカレー.jpg" alt="焼きカレー">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">焼きカレー</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
+          </div>
+        </div>
+
+        <!-- エビピラフ（ミニサラダ付きます） -->
+        <div class="menu-card" id="menu-shrimp-pilaf">
+          <div class="menu-card-image" aria-label="エビピラフの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/エビピラフ.jpg" alt="エビピラフ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">エビピラフ</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
+          </div>
+        </div>
+
+        <!-- オムライス（ミニサラダ付きます） -->
+        <div class="menu-card" id="menu-omelet-rice">
+          <div class="menu-card-image" aria-label="オムライスの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/オムライス.jpg" alt="オムライス">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">オムライス</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
+          </div>
+        </div>
+
+        <!-- チキンドリア（ミニサラダ付きます） -->
+        <div class="menu-card" id="menu-chicken-doria">
+          <div class="menu-card-image" aria-label="チキンドリアの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/チキンドリア.jpg" alt="チキンドリア">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">チキンドリア</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
+          </div>
+        </div>
+
+        <!-- ミートソースパスタ -->
+        <div class="menu-card" id="menu-meat-sauce-pasta">
+          <div class="menu-card-image" aria-label="ミートソースパスタの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ミートソースパスタ.jpg" alt="ミートソースパスタ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ミートソースパスタ</span>
+            <p class="menu-card-desc" style="font-size: 0.8rem; color: var(--text-mid); margin-top: 4px;">ミニサラダ付きます</p>
           </div>
         </div>
 
@@ -647,7 +811,8 @@
     <div id="panel-lunch" class="menu-panel" role="tabpanel" aria-labelledby="tab-lunch">
 
       <p style="text-align: center; margin: 1.5rem auto 1rem; font-size: 0.95rem; color: var(--text-dark); font-weight: 500; max-width: 600px; line-height: 1.7;">
-        手作りのおかずをバランスよく盛り合わせた日替わりランチの一例です。
+        手作りのおかずをバランスよく盛り合わせた日替わりランチの一例です。<br>
+        ごはん・サラダ・スープ付
       </p>
 
       <div class="menu-cards" style="margin-top:24px;">
@@ -723,7 +888,7 @@
         <div class="menu-card" id="menu-coffee">
           <div class="menu-card-image" aria-label="コーヒーの写真">
             <div class="menu-card-image-inner">
-              <img src="img/コーヒー.jpg" alt="コーヒー">
+              <img src="img/コーヒー.png" alt="コーヒー">
             </div>
           </div>
           <div class="menu-card-body">
@@ -744,7 +909,7 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">プレミアムアイスコーヒー</span>
             <p class="menu-card-desc">
-              淹れたてコーヒーと氷をお持ちします。
+              淹れたてコーヒーと氷をお持ちします。淹れたての豊かな香りをお楽しみください。
             </p>
           </div>
         </div>
@@ -762,35 +927,24 @@
               フレッシュなレモンを贅沢に絞った、すっきり爽快なドリンク。<br>
               季節によって自家栽培/無農薬レモン使用
             </p>
-          </div>
-        </div>
-
-        <!-- クリームソーダ -->
-        <div class="menu-card" id="menu-cream-soda">
-          <div class="menu-card-image" aria-label="クリームソーダの写真">
-            <div class="menu-card-image-inner">
-              <img src="img/クリームソーダ.jpg" alt="クリームソーダ">
+            <div style="margin-top: 10px; width: 80px; aspect-ratio: 1/1; overflow: hidden; border: 1px solid var(--border-color); border-radius: 4px;">
+              <img src="img/無農薬4.jpg" alt="無農薬レモン" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
           </div>
-          <div class="menu-card-body">
-            <span class="menu-card-tag">クリームソーダ</span>
-            <p class="menu-card-desc">
-              さわやかなソーダに、冷たいアイスクリームを載せた定番ドリンクです。
-            </p>
-          </div>
         </div>
 
-        <!-- ソフトドリンク -->
+
+        <!-- 瓶ジュース -->
         <div class="menu-card" id="menu-soft-drink">
-          <div class="menu-card-image" aria-label="ソフトドリンクの写真">
+          <div class="menu-card-image" aria-label="瓶ジュースの写真">
             <div class="menu-card-image-inner">
-              <img src="img/ソフトドリンク.jpg" alt="ソフトドリンク">
+              <img src="img/ソフトドリンク.jpg" alt="瓶ジュース">
             </div>
           </div>
           <div class="menu-card-body">
-            <span class="menu-card-tag">ソフトドリンク</span>
+            <span class="menu-card-tag">瓶ジュース</span>
             <p class="menu-card-desc">
-              紅茶やジュース、ミルクなど各種ソフトドリンクをご用意しております。
+              みかん水など、昔懐かしい瓶ジュースです。
             </p>
           </div>
         </div>
@@ -806,6 +960,21 @@
             <span class="menu-card-tag">シェイク</span>
             <p class="menu-card-desc">
               冷たくて甘い、あんど特製のひんやりシェイク。
+            </p>
+          </div>
+        </div>
+
+        <!-- 定番ドリンク -->
+        <div class="menu-card" id="menu-classic-drink">
+          <div class="menu-card-image" aria-label="定番ドリンクの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/クリームソーダ.jpg" alt="定番ドリンク">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">定番ドリンク</span>
+            <p class="menu-card-desc">
+              上記ドリンクに加え、紅茶・ミルク・ミックスジュース・ラッシー各種・ソフトドリンク各種等ございます。
             </p>
           </div>
         </div>
@@ -829,9 +998,9 @@
           <div style="text-align: left; width: 100%;">
             <h3 style="font-family: var(--font-serif); font-size: 2.2rem; letter-spacing: 0.15em; margin-bottom: 0.8rem; color: #fff;">お抹茶・抹茶スイーツ</h3>
             <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.8; max-width: 600px; margin: 0 0; color: rgba(255,255,255,0.95);">
-              こだわりの宇治抹茶を使用したドリンクや手作りスイーツ。<br>
-              ほっと心が和む、贅沢な緑の味わいをお届けします。<br>
-              <span style="font-size: 0.85rem; opacity: 0.85; display: inline-block; margin-top: 0.5rem;">※常時ご用意しているわけではないため、事前にお問い合わせいただけますと幸いです。</span>
+              こだわりの抹茶を使用したドリンクや手作りスイーツ。<br>
+              ほっと心が和む、贅沢な抹茶の香りと味わいをお届けします。<br>
+              <span style="font-size: 0.85rem; opacity: 0.85; display: inline-block; margin-top: 0.5rem;">※抹茶スイーツは常時ご用意しているわけではないため、事前にお問い合わせいただけますと幸いです。</span>
             </p>
           </div>
           <div class="matcha-hero-image-wrap">
@@ -913,7 +1082,7 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">抹茶バスクチーズケーキ</span>
             <p class="menu-card-desc">
-              宇治抹茶を贅沢に練り込み、高温で香ばしく焼き上げた濃厚なバスクチーズケーキです。
+              抹茶を贅沢に練り込み、高温で香ばしく焼き上げた濃厚なバスクチーズケーキです。
             </p>
           </div>
         </div>
@@ -933,7 +1102,7 @@
       <div class="sweets-note" style="margin-top:12px; border-color:var(--brown); background:linear-gradient(135deg,#f5e8d0,#efe0c0);">
         <div class="sweets-note-text">
           <h4 style="color:var(--brown);">定番・気まぐれスイーツについて</h4>
-          <p>定番のアイスクリームのほか、店主手作りの日替わり・週替わりスイーツ（パフェやケーキなど）をご用意しております。当日のラインナップはお電話またはInstagramのストーリーズでご確認ください。</p>
+          <p>定番のアイスクリームのほか、手作りのパフェやケーキなど季節によって多数ご用意しております</p>
         </div>
       </div>
 
@@ -954,36 +1123,6 @@
           </div>
         </div>
 
-        <!-- マロンパフェ(期間限定) -->
-        <div class="menu-card" id="menu-marron-parfait">
-          <div class="menu-card-image" aria-label="マロンパフェ(期間限定)の写真">
-            <div class="menu-card-image-inner">
-              <img src="img/マロンパフェ.png" alt="マロンパフェ(期間限定)">
-            </div>
-          </div>
-          <div class="menu-card-body">
-            <span class="menu-card-tag">マロンパフェ(期間限定)</span>
-            <p class="menu-card-desc">
-              栗の美味しさをぎゅっと詰め込んだ、秋を感じる贅沢な期間限定パフェです。
-            </p>
-          </div>
-        </div>
-
-        <!-- いちごパフェ(期間限定) -->
-        <div class="menu-card" id="menu-strawberry-parfait">
-          <div class="menu-card-image" aria-label="いちごパフェ(期間限定)の写真">
-            <div class="menu-card-image-inner">
-              <img src="img/いちごパフェ.png" alt="いちごパフェ(期間限定)">
-            </div>
-          </div>
-          <div class="menu-card-body">
-            <span class="menu-card-tag">いちごパフェ(期間限定)</span>
-            <p class="menu-card-desc">
-              フレッシュないちごを贅沢に使用した、見た目も華やかな期間限定パフェ。
-            </p>
-          </div>
-        </div>
-
         <!-- ガトーショコラ -->
         <div class="menu-card" id="menu-gateau-chocolat">
           <div class="menu-card-image" aria-label="ガトーショコラの写真">
@@ -994,7 +1133,7 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">ガトーショコラ</span>
             <p class="menu-card-desc">
-              しっとりと濃厚な味わいに焼き上げた、ビターで上品な甘さの自家製チョコレートケーキ。
+              しっとりと濃厚な味わいに焼き上げた、ビターで上品な甘さの手作りチョコレートケーキ。
             </p>
           </div>
         </div>
@@ -1051,7 +1190,7 @@
         <div class="menu-card" id="menu-coffee-jelly">
           <div class="menu-card-image" aria-label="コーヒーゼリーの写真">
             <div class="menu-card-image-inner">
-              <img src="img/コーヒーゼリー.jpg" alt="コーヒーゼリー">
+              <img src="img/コーヒーゼリー.png" alt="コーヒーゼリー">
             </div>
           </div>
           <div class="menu-card-body">
@@ -1105,8 +1244,104 @@
           <div class="menu-card-body">
             <span class="menu-card-tag">マフィン各種</span>
             <p class="menu-card-desc">
-              日替わりでご用意する手作りマフィン。様々なフレーバーをお楽しみいただけます。
+              様々なフレーバーをお楽しみいただける手作りマフィン。
             </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 期間限定スイーツの案内 -->
+      <div class="sweets-note" style="margin-top:40px; border-color:var(--green); background:linear-gradient(135deg,#e2eee0,#d0e5cc);">
+        <div class="sweets-note-text">
+          <h4 style="color:var(--green);">期間限定スイーツについて</h4>
+          <p>上記の定番スイーツに加え、季節ごとに期間限定スイーツをご用意しております。</p>
+        </div>
+      </div>
+
+      <div class="menu-cards" style="margin-top:24px;">
+
+        <!-- いちごパフェ -->
+        <div class="menu-card" id="menu-strawberry-parfait">
+          <div class="menu-card-image" aria-label="いちごパフェの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/いちごパフェ.jpg" alt="いちごパフェ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">いちごパフェ</span>
+          </div>
+        </div>
+
+        <!-- マロンパフェ -->
+        <div class="menu-card" id="menu-marron-parfait">
+          <div class="menu-card-image" aria-label="マロンパフェの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/マロンパフェ.jpg" alt="マロンパフェ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">マロンパフェ</span>
+          </div>
+        </div>
+
+        <!-- 抹茶氷 -->
+        <div class="menu-card" id="menu-matcha-shaved-ice">
+          <div class="menu-card-image" aria-label="抹茶氷の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/抹茶氷.jpg" alt="抹茶氷">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">抹茶氷</span>
+          </div>
+        </div>
+
+        <!-- いちごミルク氷 -->
+        <div class="menu-card" id="menu-strawberry-milk-ice">
+          <div class="menu-card-image" aria-label="いちごミルク氷の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/いちごミルク氷.jpg" alt="いちごミルク氷">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">いちごミルク氷</span>
+          </div>
+        </div>
+
+        <!-- かき氷 -->
+        <div class="menu-card" id="menu-shaved-ice">
+          <div class="menu-card-image" aria-label="かき氷の写真">
+            <div class="menu-card-image-inner">
+              <img src="img/かき氷.jpg" alt="かき氷">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">かき氷</span>
+          </div>
+        </div>
+
+        <!-- あんみつ -->
+        <div class="menu-card" id="menu-anmitsu">
+          <div class="menu-card-image" aria-label="あんみつの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/あんみつ.jpg" alt="あんみつ">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">あんみつ</span>
+          </div>
+        </div>
+
+        <!-- ぜんざい -->
+        <div class="menu-card" id="menu-zenzai">
+          <div class="menu-card-image" aria-label="ぜんざいの写真">
+            <div class="menu-card-image-inner">
+              <img src="img/ぜんざい.jpg" alt="ぜんざい">
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-tag">ぜんざい</span>
           </div>
         </div>
 
@@ -1126,14 +1361,13 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="img/ロゴ.png" alt="あんど" class="footer-logo-img">
         <div class="footer-name">珈琲とお抹茶の喫茶店</div>
+        <img src="img/ロゴ2.png" alt="あんど" class="footer-logo-img">
       </div>
       <nav class="footer-links" aria-label="フッターナビゲーション">
-        <a href="about.html">あんどのこと</a>
+        <a href="about.html">お店について</a>
         <a href="index.html#children">お子様連れ歓迎</a>
         <a href="menu.html">メニュー</a>
-        <a href="gallery.html">ギャラリー</a>
         <a href="index.html#info">基本情報</a>
         <a href="index.html#access">アクセス</a>
         <a href="index.html#contact">お問い合わせ</a>

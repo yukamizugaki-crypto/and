@@ -394,7 +394,7 @@ section {
 }
 
 .hero-title-sub {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
   letter-spacing: 0.25em;
   color: rgba(255,255,255,0.85);
   margin-bottom: 0.5rem;
@@ -404,6 +404,7 @@ section {
 .hero-title-main {
   margin: 0;
   line-height: 1.1;
+  text-align: center;
   animation: fadeDown 1s 0.2s ease both;
 }
 
@@ -414,6 +415,8 @@ section {
   object-fit: contain;
   filter: brightness(0) invert(1) drop-shadow(0 4px 24px rgba(0,0,0,0.5));
   max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   animation: fadeDown 1s 0.2s ease both;
 }
 
@@ -1754,6 +1757,7 @@ section {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .concept-grid { grid-template-columns: 1fr; gap: 32px; }
+  .concept-image-wrap { display: none; }
   .concept-mobile-slider {
     display: block;
     width: 100%;
@@ -2001,6 +2005,19 @@ section {
 }
 
 #panel-drink .menu-card-image-inner img {
+  object-fit: contain;
+}
+
+/* ===== SEASONAL SWEETS IMAGE STYLE (SHOW ALL) ===== */
+#menu-strawberry-parfait .menu-card-image-inner,
+#menu-matcha-shaved-ice .menu-card-image-inner,
+#menu-strawberry-milk-ice .menu-card-image-inner {
+  background: transparent;
+}
+
+#menu-strawberry-parfait .menu-card-image-inner img,
+#menu-matcha-shaved-ice .menu-card-image-inner img,
+#menu-strawberry-milk-ice .menu-card-image-inner img {
   object-fit: contain;
 }
 
